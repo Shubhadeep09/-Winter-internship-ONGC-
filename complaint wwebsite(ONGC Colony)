@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints Page</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: white;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #444;
+            overflow: hidden;
+            justify-content: space-evenly;
+            display: flex;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+
+        }
+
+        .heading1.heading2 {
+            background-color: white;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+
+        .Contentheading {
+            background-color: white;
+            color: rgb(72, 27, 238);
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav a {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+        #complaint {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #submitbutton {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #submitbutton:hover {
+            background-color: #2980b9;
+        }
+
+        #complaintform {
+            margin-top: 10px;
+        }
+
+        #complaint label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #complaint textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        #complaint span {
+            font-weight: bold;
+            color: #555;
+        }
+
+        #complaint button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="heading1">
+            <h1>COMPLAINT MANAGEMENT SYSTEM</h1>
+        </div>
+        <hr>
+        <div class="heading2">
+            <h2>ONGC,Hazira Plant<span style="color: green;"> (Colony Civil and Garden Maintenance)</span></h2>
+        </div>
+        <div class="heading3">
+            <a href="#">Click here for Plant Civil Maintenance</a>
+        </div>
+
+    </header>
+
+    <nav class="navbar">
+        <a href="#">Register Complaint</a>
+        <a href="#">Action to Complaint</a>
+        <a href="#">Pending Compalaints</a>
+        <a href="#">Reports</a>
+    </nav>
+
+    <div class="Contentheading">
+        <h1><span style="color: black;">Complaint Registration</span>(ONGC Colony only)</h1>
+    </div>
+
+    <div id="complaint">
+        <h2><span style="color: #333;">Complaint Time</span></h2>
+        <label>Complaint Type:
+            <select id="complaintType" onchange="autoType()">
+                <option value="select">Select Type</option>
+                <option value="Civil">Civil</option>
+                <option value="Electrician">Electrician</option>
+            </select>
+
+
+        </label>
+
+        <!-- Options on clicking -->
+        <button onclick="showOptions()">Click to select options</button>
+        <div id="options" style="display: none;">
+            <!-- 3 options -->
+
+
+            <!-- Form for specifications -->
+            <form id="complaintform">
+
+                <label>Quarter Type:
+                    <select name="additionalSpecificationFromDropdown">
+                        <option value="select">Select Type</option>
+                        <option value="specificationA">A Type</option>
+                        <option value="specificationB">B Type</option>
+                        <option value="specificationB">BA Type</option>
+                        <option value="specificationC">C Type</option>
+                        <option value="specificationC">D Type</option>
+                    </select>
+                </label>
+                <label>Block Number: <input type="text" name="specification3"></label>
+                <label>House Number: <input type="text" name="specification4"></label>
+            </form>
+        </div>
+        <hr>
+
+        <!-- Textbox for complaint -->
+        <label>Complaint: <textarea name="complaint" rows="4" cols="50"></textarea></label>
+
+        <!-- User information -->
+        <label>User ID: <span id="userId">12345</span></label>
+        <label>Name: <span id="userName">Anushka Das</span></label>
+        <label>Phone Number: <span id="phoneNumber">99XXXXXX</span></label>
+
+        <!-- Submit button -->
+        <button id="submitbutton" onclick="submitForm()">Submit</button>
+    </div>
+
+    <script>
+        function showOptions() {
+            // Display the options div
+            document.getElementById("options").style.display = "block";
+        }
+        function autoType() {
+            // Auto-fill complaint based on selected type
+            var complaintType = document.getElementById("complaintType").value;
+            var complaintTextArea = document.getElementsByName("complaint")[0];
+
+            switch (complaintType) {
+                case "Civil":
+                    complaintTextArea.value = "I have a civil-related complaint.";
+                    break;
+                case "Carpenter":
+                    complaintTextArea.value = "I have a carpenter-related complaint.";
+                    break;
+                case "Plumber":
+                    complaintTextArea.value = "I have another type of complaint.";
+                    break;
+                case "Electrician":
+                    complaintTextArea.value = "I have another type of complaint.";
+                    break;
+                default:
+                    complaintTextArea.value = ""; // Clear textarea if "Select Type" is chosen
+            }
+        }
+
+        function submitForm() {
+            // Implement submission logic here (e.g., send data to server)
+            alert("Thanks for registering your Complaint!");
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
