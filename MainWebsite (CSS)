@@ -1,0 +1,405 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #e4f9f9;
+}
+
+.logo {
+  max-width: 70px;
+  padding-top: 6px;
+  padding-left: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.datetime {
+  text-align: right;
+  font-size: 16px;
+  padding-right: 8px;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+}
+
+.blue-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  /* Text color */
+  background-color: #3498db;
+  /* Blue background color */
+  border: 2px solid #2f83bb;
+  /* Border color */
+  border-radius: 25px;
+  /* Rounded corners */
+}
+
+.bg-body-tertiary {
+  background-color: rgb(230, 150, 160) !important;
+}
+
+.news-container {
+  position: absolute;
+  top: 9vw;
+  left: 0;
+  right: 0;
+  font-family: 'Times New Roman', Times, serif;
+  box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+  background-color: #ccc;
+}
+
+.news-container .news-title {
+
+  position: absolute;
+  background: red;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: white;
+  font-weight: bold;
+  z-index: 200;
+}
+
+.news-container ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  animation: scroll 25s infinite linear;
+
+}
+
+.news-container ul li {
+  white-space: nowrap;
+  padding: 10px 24px;
+  color: rgb(0, 0, 0);
+}
+
+
+.news-container ul li:last-child::after {
+  display: none;
+
+}
+
+@keyframes scroll {
+  form {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-1083px);
+  }
+}
+
+
+
+.image-container {
+  position: relative;
+  top: 70px;
+  left: 20px;
+  width: 470px;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid powderblue;
+}
+
+/* Style for the image inside the container */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#image2 {
+  margin-top: 10px;
+}
+
+#image2 h5 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Adjust the background color and opacity as needed */
+  color: #fff;
+  /* Adjust the text color */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Style for the text heading */
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Adjust the background color and opacity as needed */
+  color: #fff;
+  /* Adjust the text color */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+}
+
+#image3 {
+  /* position: relative; */
+  top: -28.18vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid powderblue;
+}
+
+#image4 {
+  top: -27vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 186px;
+  overflow: hidden;
+  border: 1px solid powderblue;
+}
+
+
+
+#notification-panel-heading {
+  position: absolute;
+  top: 12.7vw;
+  right: 10px;
+  background-size: contain;
+  background-color: powderblue;
+  border-radius: 5%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Adjust as needed */
+  ;
+  /* Adjust as needed */
+}
+
+
+.Notifications {
+  position: absolute;
+  top: 16.4vw;
+  right: 0;
+  height: 50vw;
+  /* Set your desired height */
+  overflow: hidden;
+}
+
+.notification-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: scrollNotifications 10s linear infinite;
+}
+
+@keyframes scrollNotifications {
+  0% {
+    transform: translateY(0);
+    /* Start with no translation */
+  }
+
+  25% {
+    transform: translateY(-100%);
+    /* Move up after 25% of animation duration */
+  }
+
+  50% {
+    transform: translateY(-200%);
+    /* Move up after 50% of animation duration */
+  }
+
+  75% {
+    transform: translateY(-300%);
+    /* Move up after 75% of animation duration */
+  }
+
+  100% {
+    transform: translateY(-400%);
+    /* Move up to the end */
+  }
+}
+
+#hazira-navbar {
+  top: -25vw;
+}
+
+.sections-container {
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0 !important;
+}
+
+.birthday-container,
+.table-section,
+.quick-links-section {
+  position: relative;
+  top: -25vw;
+
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.birthday-container {
+  background: linear-gradient( #f394d3, #a1b5f5);
+  /* Additional CSS properties can be added here */
+}
+
+
+
+.table-heading {
+  background-color: #ffffff;
+}
+
+.table-container {
+  max-height: 300px;
+  /* Set a fixed height for the tbody to enable vertical scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th {
+  padding: 0px;
+}
+
+.table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.table td button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.table td button:hover {
+  background-color: #218838;
+}
+
+.list-group {
+  margin-top: 10px;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  background-color: #ffffff;
+}
+
+/* .list-group-item.active {
+    background-color: #007bff;
+    color: #fff;
+  } */
+
+.list-group-item:hover {
+  background-color: #007bff;
+}
+
+#slogan {
+  position: relative;
+  top: -24vw;
+}
+
+.card-header {
+  background-color: powderblue;
+}
+
+.footerimages {
+  position: relative;
+  top: -25vw;
+  display: flex;
+}
+
+.footerimage {
+  position: relative;
+  top: 70px;
+  left: 20px;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid powderblue;
+  margin: 2px;
+}
+
+.footerimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#footer-line {
+  position: relative;
+  top: -7vw;
+  width: 100%;
+  height: 2vw;
+  text-align: center;
+  background-color: #28a745;
+
+}
+
+
+#last-section {
+  height: 0px;
+}
+
+.footer {
+  height: 10vw;
+}
